@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Shop.Domain.Commands.CreateCustomer;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Shop.Infra
 {

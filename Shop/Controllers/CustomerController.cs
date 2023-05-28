@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Domain.Commands.CreateCustomer;
+using Shop.Domain.Commands.GetCustomer;
 
 namespace Shop.Controllers
 {
@@ -24,9 +25,10 @@ namespace Shop.Controllers
 
         [HttpGet]
         [Route("")]
-        public Task<CreateCustomerResponse> GetCustomer([FromBody] CreateCustomerRequest request)
+        public async Task<GetCustomerResponse> GetCustomer(Guid id)
         {
-            return _mediator.Send(request);
+            var request = new GetCustomerRequest(id);
+            return await _mediator.Send(request);
         }
     }
 }
