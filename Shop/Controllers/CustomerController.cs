@@ -8,13 +8,25 @@ namespace Shop.Controllers
     [Route("v1/customers")]
     public class CustomerController : ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public CustomerController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [HttpPost]
         [Route("")]
-        public Task<CreateCustomerResponse> Create(
-            [FromServices]IMediator mediator,
-            [FromBody]CreateCustomerRequest request)
+        public Task<CreateCustomerResponse> CreateCustomer([FromBody]CreateCustomerRequest request)
         {
-            return mediator.Send(request);
+            return _mediator.Send(request);
+        }
+
+        [HttpGet]
+        [Route("")]
+        public Task<CreateCustomerResponse> GetCustomer([FromBody] CreateCustomerRequest request)
+        {
+            return _mediator.Send(request);
         }
     }
 }
