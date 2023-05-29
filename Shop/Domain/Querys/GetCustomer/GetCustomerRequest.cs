@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Shop.Domain.Commands.GetCustomer
+namespace Shop.Domain.Querys.GetCustomer
 {
     public class GetCustomerRequest : IRequest<GetCustomerResponse>
     {

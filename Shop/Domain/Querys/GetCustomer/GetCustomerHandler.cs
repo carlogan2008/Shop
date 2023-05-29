@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Shop.Domain.Commands.GetCustomer
+namespace Shop.Domain.Querys.GetCustomer
 {
     public class GetCustomerHandler : IRequestHandler<GetCustomerRequest, GetCustomerResponse>
     {
@@ -10,7 +10,7 @@ namespace Shop.Domain.Commands.GetCustomer
             string email = "carlos@teste.com";
             DateTime dataCriacao = DateTime.Now;
 
-            return Task.FromResult(new GetCustomerResponse(Guid.NewGuid(), nome, email, dataCriacao));
+            return Task.FromResult(new GetCustomerResponse(request.Id, nome, email, dataCriacao));
         }
     }
 }
