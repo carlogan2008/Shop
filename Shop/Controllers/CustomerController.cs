@@ -6,6 +6,7 @@ using System.Net;
 
 namespace Shop.Controllers
 {
+    [ApiController]
     [Route("/v1/customers")]
     public class CustomerController : ControllerBase
     {
